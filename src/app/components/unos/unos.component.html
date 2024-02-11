@@ -1,0 +1,56 @@
+<form [formGroup]="forma" (ngSubmit)="sabmitujFormu()">
+  <div class="form-group">
+
+    <label for="ime">Ime</label>
+    <input [(ngModel)]="imeOsiguranika" type="text" class="form-control" id="ime" aria-describedby="emailHelp" placeholder="Unesite ime" formControlName="ime">
+    <span style="color : red" *ngIf="ime && ime.invalid && ime.touched">Ovo polje je obavezno</span>
+  </div>
+
+  <div class="form-group">
+    <label for="prezime">Prezime</label>
+    <input [(ngModel)]="prezimeOsiguranika" type="text" class="form-control" id="prezime" aria-describedby="emailHelp" placeholder="Unesite prezime" formControlName="prezime">
+    <span style="color : red" *ngIf="prezime && prezime.invalid && prezime.touched">Ovo polje je obavezno</span>
+  </div>
+
+  <div class="form-group">
+    <label for="datumrodjenja">Datum rodjenja</label>
+    <input [(ngModel)]="datumRodjenjaOsiguranika" type="date" class="form-control" id="datumrodjenja"   formControlName="datumrodjenja">
+    <span style="color : red" *ngIf="datumrodjenja && datumrodjenja.invalid && datumrodjenja.touched">Ovo polje je obavezno</span>
+  </div>
+
+
+  <div class="form-group">
+    <label for="ime">Broj pasosa</label>
+    <input [(ngModel)]="brojPasosaOsiguranika"  type="text" class="form-control" id="brojpasosa" aria-describedby="emailHelp" placeholder="Unesite broj pasosa" formControlName="brojpasosa">
+    <span style="color : red" *ngIf="brojpasosa && brojpasosa.invalid && brojpasosa.touched">Ovo polje je obavezno</span>
+  </div>
+
+
+  <div class="form-group">
+    <label for="ime">Telefon</label>
+    <input [(ngModel)]="telefonOsiguranika" type="text" class="form-control" id="telefon" aria-describedby="emailHelp" placeholder="Unesite telefon" formControlName="telefon">
+  </div>
+
+  <div class="form-group">
+    <label for="imejl">Imejl adresa</label>
+    <input [(ngModel)]="imejlOsiguranika" type="email" class="form-control" id="imejl" aria-describedby="emailHelp" placeholder="Unesite imejl adresu" formControlName="imejl">
+    <span style="color : red" *ngIf="imejl && imejl.invalid && imejl.touched">Input je nevalidan</span>
+  </div>
+
+  <div class="form-group">
+    <label for="datumputovanjaod">Odaberite od kad do kad zelite da putujete</label>
+    <input  [(ngModel)]="datumPutovanjaOsiguranikaOd" type="date" class="form-control" id="datumputovanjaod" formControlName="datumputovanjaod">
+    <input  [(ngModel)]="datumPutovanjaOsiguranikaDo" type="date" class="form-control" id="datumputovanjado" formControlName="datumputovanjado">
+  </div>
+
+  <div class="form-group">
+    <label for="odabir">Odaberite nacin putovanja</label>
+    <select  [(ngModel)]="nacinPutovanjaOsiguranika" id="odabir" class="form-select" formControlName="odabir">
+    <option >Individualno</option>
+    <option >Grupno</option>
+  </select>
+  </div>
+
+
+  <button [disabled]="forma.invalid"  type="submit" class="btn btn-primary">Submit</button>
+</form>
