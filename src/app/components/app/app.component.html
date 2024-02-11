@@ -1,20 +1,23 @@
 <header>
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
-  <nav class="navbar navbar-expand-lg navbar-light bg-light">
-    <div class="container-fluid">
-      <a [routerLink]="'/'" class="navbar-brand">Osiguranje</a>
-      <div class="collapse navbar-collapse justify-content-between" id="navbarNavAltMarkup">
-        <div class="navbar-nav">
-          <a [routerLink]="'/unos-osiguranja'" class="nav-link active" aria-current="page">Unos osiguranja</a>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+          integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <div class="container-fluid">
+            <a [routerLink]="'/'" class="navbar-brand">Osiguranje</a>
+            <div class="collapse navbar-collapse justify-content-between" id="navbarNavAltMarkup">
+                <div class="navbar-nav">
+                    <a [routerLink]="'/unos-osiguranja'" class="nav-link active" aria-current="page">Unos osiguranja</a>
+                    <a [routerLink]="'/pregled-osiguranika'" class="nav-link active" aria-current="page">Pregled
+                        osiguranika</a>
+                </div>
+                <div class="d-flex">
+                    <span></span>
+                </div>
+            </div>
         </div>
-        <div class="d-flex">
-          <span></span>
-        </div>
-      </div>
-    </div>
-  </nav>
+    </nav>
 </header>
 
 <div class="container pt-3">
-  <router-outlet></router-outlet>
+    <router-outlet></router-outlet>
 </div>

@@ -1,0 +1,34 @@
+<table class="table table-hover table-dark" id="table">
+    <thead>
+    <tr>
+        <th scope="col">Id osiguranika</th>
+        <th scope="col">Ime osiguranika</th>
+        <th scope="col">Prezime osiguranika</th>
+        <th scope="col">Datum rodjenja osigurnaika</th>
+        <th scope="col">Broj pasosa osiguranika</th>
+        <th scope="col">Telefon osiguranika</th>
+        <th scope="col">Email osiguranika</th>
+        <th scope="col">Datum putovanja osiguranika od</th>
+        <th scope="col">Datum putovanja osiguranika do</th>
+        <th scope="col">Broj dana putovanja</th>
+        <th scope="col">Nacin putovanja osiguranika</th>
+    </tr>
+    </thead>
+
+    <tbody id="tbody">
+    <tr (click)="pregledPojedinacnogOsiguranika(osiguranik)" *ngFor="let osiguranik of nizOsiguranika">
+        <td style="align-items: start">{{osiguranik.id}}</td>
+        <td style="align-items: center">{{osiguranik.imeOsiguranika}}</td>
+        <td style="align-self: center;" class="edit">{{osiguranik.prezimeOsiguranika}}</td>
+        <td style="align-items: start">{{konvertujUDatum(osiguranik.datumRodjenjaOsiguranika)}}</td>
+        <td style="align-items: center">{{osiguranik.brojPasosaOsiguranika}}</td>
+        <td style="align-self: center;" class="edit">{{osiguranik.telefonOsiguranika}}</td>
+        <td style="align-items: start">{{osiguranik.imejlOsiguranika}}</td>
+        <td style="align-items: center">{{konvertujUDatum(osiguranik.datumPutovanjaOsiguranikaOd)}}</td>
+        <td style="align-self: center;" class="edit">{{konvertujUDatum(osiguranik.datumPutovanjaOsiguranikaDo)}}</td>
+        <td style="align-items: center">{{osiguranik.razlikaUDanima}}</td>
+        <td style="align-items: center">{{osiguranik.nacinPutovanjaOsiguranika}}</td>
+    </tr>
+    </tbody>
+</table>
+
