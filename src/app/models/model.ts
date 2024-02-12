@@ -17,5 +17,6 @@ export interface PomocniOsiguranik {
     id: any,
     imePomocnogOsiguranika: any,
     prezimePomocnogOsiguranika: any,
-    datumRodjenjaPomocnogOsiguranika: any
+    datumRodjenjaPomocnogOsiguranika: any,
+    brojPasosaPomocnogOsiguranika : any
 }

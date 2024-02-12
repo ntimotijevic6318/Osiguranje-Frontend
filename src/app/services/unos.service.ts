@@ -28,9 +28,9 @@ export class UnosService {
         })
     }
 
-    sacuvajPomocnogOsiguranikeUBazi(imePomocnogOsigurnaika: any, prezimePomocnogOsiguranika: any, datumRodjenjaPomocnogOsiguranika: any, id: any): Observable<any> {
+    sacuvajPomocnogOsiguranikeUBazi(imePomocnogOsigurnaika: any, prezimePomocnogOsiguranika: any, datumRodjenjaPomocnogOsiguranika: any, id: any , brojPasosaPomocnogOsiguranika : any): Observable<any> {
         let putanja = environment.putanja;
-        return this.httpKlijent.post(`${putanja}/api/osiguranik/pomocni`, {imePomocnogOsiguranika: imePomocnogOsigurnaika, prezimePomocnogOsiguranika: prezimePomocnogOsiguranika, datumRodjenjaPomocnogOsiguranika: datumRodjenjaPomocnogOsiguranika, idNosiocaOsiguranja: id})
+        return this.httpKlijent.post(`${putanja}/api/osiguranik/pomocni`, {imePomocnogOsiguranika: imePomocnogOsigurnaika, prezimePomocnogOsiguranika: prezimePomocnogOsiguranika, datumRodjenjaPomocnogOsiguranika: datumRodjenjaPomocnogOsiguranika, idNosiocaOsiguranja: id , brojPasosaPomocnogOsiguranika : brojPasosaPomocnogOsiguranika})
     }
 
     ucitajIzBaze(): Observable<Osiguranik[]> {

@@ -12,6 +12,7 @@
         <th scope="col">Datum putovanja osiguranika do</th>
         <th scope="col">Broj dana polise</th>
         <th scope="col">Nacin putovanja osiguranika</th>
+        <th scope="col">Datum unosa polise</th>
     </tr>
     </thead>
 
@@ -28,6 +29,7 @@
         <td style="align-self: center;" class="edit">{{konvertujUDatum(osiguranik.datumPutovanjaOsiguranikaDo)}}</td>
         <td style="align-items: center">{{osiguranik.razlikaUDanima}}</td>
         <td style="align-items: center">{{osiguranik.nacinPutovanjaOsiguranika}}</td>
+        <td style="align-items: center">{{konvertujUDatum(osiguranik.datumUnosaPolise)}}</td>
     </tr>
     </tbody>
 </table>
@@ -42,6 +44,7 @@
         <th scope="col">Ime pomocnog osiguranika</th>
         <th scope="col">Prezime pomocnog osiguranika</th>
         <th scope="col">Datum rodjenja pomocnog osigurnaika</th>
+        <th scope="col">Broj pasosa pomocnog osiguranika</th>
     </tr>
     </thead>
 
@@ -51,6 +54,7 @@
         <td style="align-items: center">{{pomocniOsiguranik.imePomocnogOsiguranika}}</td>
         <td style="align-self: center;" class="edit">{{pomocniOsiguranik.prezimePomocnogOsiguranika}}</td>
         <td style="align-items: start">{{konvertujUDatum(pomocniOsiguranik.datumRodjenjaPomocnogOsiguranika)}}</td>
+        <td style="align-self: center;" class="edit">{{pomocniOsiguranik.brojPasosaPomocnogOsiguranika}}</td>
     </tr>
     </tbody>
 </table>

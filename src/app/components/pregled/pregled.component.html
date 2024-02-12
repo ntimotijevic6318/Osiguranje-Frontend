@@ -12,6 +12,7 @@
         <th scope="col">Datum putovanja osiguranika do</th>
         <th scope="col">Broj dana putovanja</th>
         <th scope="col">Nacin putovanja osiguranika</th>
+        <th scope="col">Datum unosa polise</th>
     </tr>
     </thead>
 
@@ -28,6 +29,7 @@
         <td style="align-self: center;" class="edit">{{konvertujUDatum(osiguranik.datumPutovanjaOsiguranikaDo)}}</td>
         <td style="align-items: center">{{osiguranik.razlikaUDanima}}</td>
         <td style="align-items: center">{{osiguranik.nacinPutovanjaOsiguranika}}</td>
+        <td style="align-items: center">{{konvertujUDatum(osiguranik.datumUnosaPolise)}}</td>
     </tr>
     </tbody>
 </table>

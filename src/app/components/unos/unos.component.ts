@@ -55,7 +55,7 @@ export class UnosComponent implements OnInit {
    telefon : new FormControl('' , []),
    datumputovanjaod : new FormControl('' , [Validators.required]),
    datumputovanjado : new FormControl('',  [Validators.required]),
-   odabir : new FormControl('' , [Validators.required])
+   odabir : new FormControl('' , [Validators.required]),
   })
 
    constructor(private unosServis : UnosService , private ruter  : Router) {
@@ -82,10 +82,14 @@ export class UnosComponent implements OnInit {
                           const prezimePomocnogOsiguranikaVrednost = (<HTMLInputElement>prezimePomocnogOsiguranika).value;
 
 
-                          const datumRodjenjaPomocnogOsiguranika = document.getElementById('datumRodjenjaPomocnogOsiguranika' + i)
+                        const brojPasosaPomocnogosiguranika = document.getElementById('brojPasosaPomocnogOsiguranika' + i)
+                        const brojPasosaPomocnogOsiguranikaVrednost = (<HTMLInputElement>brojPasosaPomocnogosiguranika).value;
+
+
+                        const datumRodjenjaPomocnogOsiguranika = document.getElementById('datumRodjenjaPomocnogOsiguranika' + i)
                           const datumRodjenjaPomocnogOsiguranikaVrednost = (<HTMLInputElement>datumRodjenjaPomocnogOsiguranika).value;
 
-                          this.unosServis.sacuvajPomocnogOsiguranikeUBazi(imePomocnogOsiguranikaVrednost , prezimePomocnogOsiguranikaVrednost , datumRodjenjaPomocnogOsiguranikaVrednost , osiguranik.id).subscribe(
+                          this.unosServis.sacuvajPomocnogOsiguranikeUBazi(imePomocnogOsiguranikaVrednost , prezimePomocnogOsiguranikaVrednost , datumRodjenjaPomocnogOsiguranikaVrednost , osiguranik.id , brojPasosaPomocnogOsiguranikaVrednost).subscribe(
                               (pomocniOsiguranik)=> {
                                  console.log(pomocniOsiguranik)
                               }
@@ -121,23 +125,28 @@ export class UnosComponent implements OnInit {
       const ime = document.createElement('input')
       const prezime = document.createElement('input')
       const datumRodjenja = document.createElement('input')
+      const brojPasosa = document.createElement('input')
 
       datumRodjenja.setAttribute("type" , "date");
       ime.setAttribute("type" , "text");
       prezime.setAttribute("type" , "text")
+      brojPasosa.setAttribute("type" , "text")
 
       ime.setAttribute("placeholder", "Unesite ime dodatnog osiguranika");
       prezime.setAttribute("placeholder" , "Unesite prezime dodatnog osigurnaika")
+      brojPasosa.setAttribute("placeholder" , "Unesite broj pasosa dodatnog osiguranika")
 
       pomocnaForma.setAttribute("id" , "pomocnaFormaOsiguranika" + this.brojacForme);
       ime.setAttribute("id" , "imePomocnogOsiguranika" + this.brojacForme);
       prezime.setAttribute("id" , "prezimePomocnogOsiguranika" + this.brojacForme);
       datumRodjenja.setAttribute("id" , "datumRodjenjaPomocnogOsiguranika" + this.brojacForme);
+      brojPasosa.setAttribute("id" , "brojPasosaPomocnogOsiguranika" + this.brojacForme);
 
 
       pomocnaForma.appendChild(ime)
       pomocnaForma.appendChild(prezime)
       pomocnaForma.appendChild(datumRodjenja);
+      pomocnaForma.appendChild(brojPasosa);
 
       forma?.appendChild(pomocnaForma)
 
